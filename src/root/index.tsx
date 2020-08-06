@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { hot } from 'react-hot-loader'
 
-import AppRouter from '../routes/index'
+import AppRouter from 'routes'
 
 let Root = () => (
   <BrowserRouter>

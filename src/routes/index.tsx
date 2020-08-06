@@ -6,8 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
-import HomePage from '../pages/Home'
-import AboutPage from '../pages/About'
+import HomePage from 'pages/Home'
+import AboutPage from 'pages/About'
 import module1Page from './module1'
 
 export default function RouteConfigExample() {
