@@ -13,7 +13,9 @@
     "@types/react-hot-loader": "^4.1.1",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
+    "dotenv-cli": "^3.2.0",
     "react": "^16.13.1",
+    "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
     "react-redux": "^7.2.1",
@@ -22,8 +24,9 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build:test": "dotenv -e .env.test.production react-app-rewired build",
+    "build": "dotenv -e .env.production react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
