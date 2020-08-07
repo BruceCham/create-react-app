@@ -1,15 +1,18 @@
 import React from 'react'
+import { Provider } from 'mobx-react';
 // import PropTypes from 'prop-types'
 import { BrowserRouter } from 'react-router-dom'
-
+import stores from 'stores'
 import { hot } from 'react-hot-loader'
 
 import AppRouter from 'routes'
 
 let Root = () => (
-  <BrowserRouter>
-    <AppRouter />
-  </BrowserRouter>
+  <Provider {...stores}>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  </Provider>
 )
 
 // Root.propTypes = {
