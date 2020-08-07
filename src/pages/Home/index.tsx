@@ -18,10 +18,9 @@ class HomePage extends React.Component<IProps, {}>{
     apiGetStoreDetail().then(res => {
       console.log(res, '=========')
     })
-    console.log(this.props.homeStore.title, 'homeStore.title ========')
     return (
       <div>
-        <h2 className="red">Home-World</h2>
+        <h2 className="red">{this.props.homeStore.title}</h2>
       </div>
     )
   }

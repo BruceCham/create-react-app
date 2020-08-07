@@ -1,7 +1,8 @@
-import homeStore from './home';
+import HomeStore from './home';
 
+const homeStore = new HomeStore()
 const store = {
-    homeStore
+    homeStore,
 };
 
 export default store;
