@@ -2,7 +2,7 @@ import { observable, action } from 'mobx';
 
 class HomeStore {
     @observable title = 'this is home page'
-    @action changeTitle(title: string) {
+    @action changeTitle(title) {
         this.title = title
     }
 }

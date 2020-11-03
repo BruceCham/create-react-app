@@ -1,6 +1,7 @@
-const { override, addPostcssPlugins } = require('customize-cra');
+const { override, addPostcssPlugins, addDecoratorsLegacy } = require('customize-cra');
 
 module.exports = override(
+  addDecoratorsLegacy(),
   addPostcssPlugins([require('postcss-pxtorem')({
     rootValue: 100,
     unitPrecision: 5,

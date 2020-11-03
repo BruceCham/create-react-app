@@ -1,11 +1,8 @@
 import React from 'react'
 import { inject } from 'mobx-react';
 
-interface IProps {
-  homeStore: any;
-}
 @inject('homeStore')
-class AboutPage extends React.Component<IProps, {}>{
+class AboutPage extends React.Component {
   render() {
     setTimeout(() => {
       console.log('has tragger')

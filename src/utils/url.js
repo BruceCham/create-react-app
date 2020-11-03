@@ -1,8 +1,8 @@
 import queryString from 'query-string'
 
 // 参数以对象形式转化为序列化客串
-export const encodeParam = (params: any) => {
-  let paramArr: Array<string> = []
+export const encodeParam = (params) => {
+  let paramArr = []
   Object.keys(params).forEach((key) => {
     if (typeof params[key] !== 'undefined') {
       paramArr.push(`${key}=${encodeURIComponent(params[key])}`)
@@ -12,7 +12,7 @@ export const encodeParam = (params: any) => {
 }
 
 // 拼接 地址加对象形式的参数
-export const genUrl = (url: string, params: object) => {
+export const genUrl = (url, params) => {
   // let paramStr = encodeParam(params)
   let paramStr = queryString.stringify(params)
   if (paramStr.length > 0) {

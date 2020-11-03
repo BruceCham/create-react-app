@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Page2: React.FC<{}> = () => {
+const Page2 = () => {
   return (
     <div>
       <h2>page 2</h2>

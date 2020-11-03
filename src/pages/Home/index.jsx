@@ -4,13 +4,9 @@ import { inject, observer } from 'mobx-react';
 import { apiGetPinocchioImg, apiGetStoreDetail } from 'api/home'
 import './index.css'
 
-interface IProps {
-  homeStore: any;
-}
-
 @inject('homeStore')
 @observer
-class HomePage extends React.Component<IProps, {}>{
+class HomePage extends React.Component {
   render() {
     apiGetPinocchioImg().then(res => {
       console.log(res, '=========')

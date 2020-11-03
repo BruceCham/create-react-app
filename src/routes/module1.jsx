@@ -4,7 +4,7 @@ import { Route, Switch, Link } from 'react-router-dom'
 import page1 from 'pages/module1/Page1'
 import page2 from 'pages/module1/Page2'
 
-const moduleRoute = ({ match }: any) => (
+const moduleRoute = ({ match }) => (
   <div>
     <h2>Hello module1~</h2>
     <ul>

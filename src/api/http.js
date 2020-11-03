@@ -5,18 +5,11 @@ import { genUrl, encodeParam } from 'utils/url'
 const METHOD_GET = 'GET'
 const METHOD_POST = 'POST'
 
-const commonFetch = (api: string, config = {}) => {
+const commonFetch = (api, config = {}) => {
   return fetch(api, config)
 }
 
-interface Response {
-  code?: number;
-  msg?: string;
-  data?: any;
-  [propName: string]: any;
-}
-
-export async function fetchJson(api: string, config: object) {
+export async function fetchJson(api, config) {
   const COMMON_ERROR_MESSAGE = '出错了，请稍后再试...'
   /* eslint-disable no-throw-literal */
   try {
@@ -31,7 +24,7 @@ export async function fetchJson(api: string, config: object) {
       throw { status: response.status, data: null, message: COMMON_ERROR_MESSAGE }
     }
     response = await response.json()
-    let res: Response = response || { status: COMMON_STATUS.EXCEPTION, message: COMMON_ERROR_MESSAGE }
+    let res = response || { status: COMMON_STATUS.EXCEPTION, message: COMMON_ERROR_MESSAGE }
     // 转化后台返回的数据 res key值
     const { code, msg, data } = res
     res = Object.assign({}, { status: code, message: msg, data })
@@ -44,7 +37,7 @@ export async function fetchJson(api: string, config: object) {
   }
 }
 
-export const fetchApi = (url: string, params: object, options?: object) => {
+export const fetchApi = (url, params, options = {}) => {
   let cfg = {
     method: METHOD_GET,
     credentials: 'same-origin',
@@ -54,7 +47,7 @@ export const fetchApi = (url: string, params: object, options?: object) => {
   return fetchJson(fetchUrl, Object.assign({}, cfg, options))
 }
 
-export const postApi = (url: string, data: object, options?: object) => {
+export const postApi = (url, data, options = {}) => {
   let thisParams = { ...data }
   let cfg = {
     method: METHOD_POST,
@@ -67,7 +60,7 @@ export const postApi = (url: string, data: object, options?: object) => {
   return fetchJson(url, Object.assign({}, cfg, options))
 }
 
-export const postFormData = (url: string, data: object, options: object) => {
+export const postFormData = (url, data, options = {}) => {
   let cfg = {
     method: METHOD_POST,
     credentials: 'same-origin',
