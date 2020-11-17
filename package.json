@@ -1,5 +1,5 @@
 {
-  "name": "web-bi2",
+  "name": "create-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "customize-cra": "^1.0.0",
+    "html-webpack-plugin": "^4.5.0",
     "postcss-pxtorem": "^5.1.1"
   }
 }
