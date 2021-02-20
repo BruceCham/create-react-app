@@ -8,6 +8,13 @@ const {
 } = require('customize-cra');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const path = require('path');
+const paths = require('react-scripts/config/paths');
+
+paths.appBuild = path.join(
+  path.dirname(paths.appBuild), 'dist'
+);
+
 const removeHtmlWebpackPlugin = () => {
   return (config) => {
     config.plugins = config.plugins.filter(
