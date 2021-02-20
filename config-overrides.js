@@ -52,6 +52,7 @@ module.exports = {
         filename: 'index.html',
         title: 'create react app',
         inject: true,
+        PUBLIC_URL: process.env.PUBLIC_URL,
         template: process.env.NODE_ENV === 'production' ? 'public/index.html' : 'public/dev.html'
       }, undefined
     ))),
